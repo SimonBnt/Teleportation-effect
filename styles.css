@@ -1,0 +1,276 @@
+body {
+    background-color: #333;
+   
+    height: 100dvh;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 2rem;
+    color: white;
+}
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#firstTContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 4rem 4rem;
+    margin: 0 4rem;
+}
+
+.column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    background-color: #444;
+    border: solid 2px white;
+    border-radius: 0.5rem;
+}
+
+#elementToTeleport {
+    font-size: 4rem;
+    color: orange;
+    border: solid 2px orange;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background-color: #222;
+    width: fit-content;
+}
+
+#secondTContainer {
+    background-color: #444;
+    border-top: solid 2px white;
+    border-bottom: solid 2px white;
+    padding: 2rem 0;
+}
+
+#elementToTelportFromRightToLeftAfterOverflow {
+    font-size: 4rem;
+    color: orange;
+    border: solid 2px orange;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background-color: #222;
+    width: fit-content;
+    animation-name: slide-left-right;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes slide-left-right {
+0% {
+    transform: translateX(-100%);
+}
+100% {
+    transform: translateX(300%);
+}
+}
+
+header {
+    background-color: #333;
+    position: relative;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: #fd7a00 solid 2px;
+    align-items: center;
+}
+
+#logo {
+    width: 64px;
+    align-self: start;
+    margin-bottom: 1.5rem;
+}
+
+#burgerMenuMainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#burgerMenuOpenerContainer {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+}    
+
+.bgMenuBar {
+    margin: 0.5rem;
+    width: 32px;
+    height: 3px;
+    border-radius: 1rem;
+    background-color: white;
+}
+    
+#burgerMenuContentContainer {
+    display: grid;
+    gap: 1rem;
+    align-self: end;
+    position: absolute;
+    top: 0;
+    right: -600px;
+    width: fit-content;
+    overflow: hidden;
+    background-color: #333;
+    border-left: solid #ffa149 2px;
+    border-bottom: solid #ffa149 2px;
+    z-index: 3000;
+    transition: 0.6s; 
+}
+
+#myLink {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    text-align: center;
+    color: #ffa149;
+}
+
+a {
+    text-decoration: none;
+    color: #ff7b00;
+}
+
+#closeBurgerMenu {
+    color: #ff7b00;
+    font-weight: bolder;
+    font-size: 2.5rem;
+    justify-self: end;
+    margin: 1rem 1rem 0 0;
+}
+
+#contactIconsContainer {
+    display: flex;
+    margin: 0 auto;
+}
+
+.externLink {
+    display: flex;
+    place-content: center;
+    margin: 1rem 0.5rem;
+    background-color: #ff7b00;
+    border-bottom: solid 2px black;
+    border-right: solid 2px black;
+    height: fit-content;
+    width: fit-content;
+    padding: 0.25rem;
+    border-radius: 100%;
+}
+                    
+.externLinkIcons {
+    width: 24px;
+    padding: 0;
+    margin: 0;
+}
+    
+.hideBurgerMenu {
+    right: 0px !important;
+    transition: 0.6s;
+}
+
+/* ---- Responsive rules ---- */
+                
+/* Smartphone @media querie */
+
+@media only screen and (max-width: 767px) {
+    .disableIconContainerForSmartphone  {
+        display: none !important;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    h1 {
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+}
+
+    /* Ipad @media querie */
+        
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .disableIconContainerForIpad {
+        display: none !important;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+    /* Computer @media querie */
+        
+@media only screen and (min-width: 1024px) {
+    .hoveredBackgroundIcon {
+        transform: scale(1.5);
+    }
+
+    #burgerMenuOpenerContainer {
+        display: none;
+    }   
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #burgerMenuContentContainer {
+        display: flex;
+        place-items: center;
+        grid-template-rows: inherit;
+        position: inherit;
+        top: inherit;
+        right: inherit;
+        border: inherit;
+        height: inherit;
+        gap: 0 2rem;
+    }
+
+    #myLink {
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+    #closeBurgerMenu {
+        display: none;
+    }
+
+    .externLink {
+        width: 32px;
+    }
+
+    .externLink:hover {
+        border-bottom: solid 2px white;
+        border-right: solid 2px white;
+    }
+
+    .externLinkIcons {
+        width: 32px;
+    }
+}
+
+    /* Large computer @media querie */
+        
+@media only screen and (min-width: 1444px) {
+    #logo {
+        margin-bottom: 0;
+    }
+}
+
+
+
