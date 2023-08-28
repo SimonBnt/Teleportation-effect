@@ -1,16 +1,19 @@
+html {
+    overflow-x: hidden;
+}
+
 body {
     background-color: #333;
-   
     height: 100dvh;
     font-family: 'Courier New', Courier, monospace;
     padding: 0;
     margin: 0;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 h1 {
-    font-size: 2rem;
-    color: white;
+    font-size: 2.25rem;
+    color: #fd7a00;
 }
 h2 {
     text-align: center;
@@ -38,14 +41,14 @@ main {
     align-items: center;
     padding: 2rem 0;
     background-color: #444;
-    border: solid 2px white;
+    border: solid 2px black;
     border-radius: 0.5rem;
 }
 
 #elementToTeleport {
     font-size: 4rem;
-    color: orange;
-    border: solid 2px orange;
+    color: #ff7b00;
+    border: solid 2px #ff7b00;
     border-radius: 0.5rem;
     padding: 0.5rem;
     background-color: #222;
@@ -54,21 +57,21 @@ main {
 
 #secondTContainer {
     background-color: #444;
-    border-top: solid 2px white;
-    border-bottom: solid 2px white;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
     padding: 2rem 0;
 }
 
 #elementToTelportFromRightToLeftAfterOverflow {
     font-size: 4rem;
-    color: orange;
-    border: solid 2px orange;
+    color: #ff7b00;
+    border: solid 2px #ff7b00;
     border-radius: 0.5rem;
     padding: 0.5rem;
     background-color: #222;
     width: fit-content;
     animation-name: slide-left-right;
-    animation-duration: 4s;
+    animation-duration: 8s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
 }
@@ -197,8 +200,40 @@ a {
     }
 
     h1 {
-        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        margin-top: 0;
+        margin-bottom: 2rem;
         text-align: center;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    #firstTContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 4rem;
+    }
+    
+    .column {
+        padding: 1.5rem;
+        width: 150px;
+        height: 40px;
+    }
+    
+    #elementToTeleport {
+        font-size: 1rem;
+    }
+    
+    #secondTContainer {
+        margin-bottom: 4rem;
+    }
+    
+    #elementToTelportFromRightToLeftAfterOverflow {
+        font-size: 1rem;
     }
 }
 
@@ -210,7 +245,32 @@ a {
     }
 
     h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    #firstTContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 4rem;
+    }
+    
+    .column {
+        padding: 1.5rem;
+        width: 250px;
+        height: 80px;
+    }
+    
+    #elementToTeleport {
+        font-size: 2rem;
+    }
+    
+    #elementToTelportFromRightToLeftAfterOverflow {
+        font-size: 2rem;
     }
 }
 
@@ -224,10 +284,6 @@ a {
     #burgerMenuOpenerContainer {
         display: none;
     }   
-
-    h1 {
-        font-size: 2rem;
-    }
 
     #burgerMenuContentContainer {
         display: flex;
@@ -255,8 +311,8 @@ a {
     }
 
     .externLink:hover {
-        border-bottom: solid 2px white;
-        border-right: solid 2px white;
+        border-bottom: solid 2px black;
+        border-right: solid 2px black;
     }
 
     .externLinkIcons {

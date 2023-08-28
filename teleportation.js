@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 leftContainer.appendChild(elementToTeleport)
             }
-            teleportLoop() // Recursive call
-        }, 1000) // Delay for teleportation
+            teleportLoop() // ---- Recursive call ---- //
+        }, 2000)
     }
 
-    teleportLoop() // Start the infinite loop
+    teleportLoop() // ---- Start the infinite loop ---- //
 })
